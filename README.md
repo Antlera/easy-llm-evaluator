@@ -2,7 +2,7 @@
     <img src="./assets/logo.jpg" alt="logo">
 </p>
 
-# Easy-LLM-Evaluator: One-Click AI-enhanced Evaluation of Model Training Effectiveness for LLM Finetuning
+# Easy-LLM-Evaluator: One-Click AI-enhanced Evaluation for LLM Finetuning
 
 ![License](https://img.shields.io/github/license/Antlera/easy-llm-evaluator)
 
@@ -30,18 +30,18 @@ export CATEGORY="category"
 Replace the placeholder values with your own corresponding data:
 
 ```bash
-BASE_MODEL_PATH: Set the path to the base model
-TUNED_MODEL_PATH: Set the path to the tuned model
-BASE_MODEL_NAME: Set the name of the base model
-TUNED_MODEL_NAME: Set the name of the tuned model
-PROJECT_NAME: Set the name of the project
-CATEGORY: Set the category
-```
+BASE_MODEL_PATH: Set the path to the base model.  For example, `export BASE_MODEL_PATH="models/vicuna-7b/"` .
+TUNED_MODEL_PATH: Set the path to the tuned model.  For example, `export TUNED_MODEL_PATH="models/vicuna-7b-CrimeKGAssitantClean/"` .
+BASE_MODEL_NAME: Set the name of the base model.  For example, `export PROJECT_NAME="vicuna-7b"` .
+TUNED_MODEL_NAME: Set the name of the tuned model.  For example, `export PROJECT_NAME="vicuna-7b-CrimeKGAssitantClean"` .
+PROJECT_NAME: Set the name of the project.  For example, `export PROJECT_NAME="vicuna-7b-law"` .
+CATEGORY: Set the category. For example, `export CATEGORY="Legal Q&A"` .
+````
 
 Finally, run the one-click evaluation script:
 
 ```bash
-. eval/script/run_eval.sh
+source eval/script/run_eval.sh
 ```
 
 ## Workflow
@@ -64,6 +64,29 @@ Easy-LLM-Evaluator
                     └─ source_data.json
 ```
 
+### Sourse Test Data Example
+
+```json
+[
+    {
+        "output": "年9月到明年8月底，租期一年。",
+        "input": "你好。我昨晚刚租了房子，签了房屋租赁合同，付一押一，合同签的是今年9.?"
+    },
+    {
+        "output": "是的，无期之前的年数算作有期刑的一部分。",
+        "input": "你好，判无期之前住了4年，转有期之后，无期之前的年数在有期之内吗?"
+    },
+    {
+        "output": "发生交通事故应该去事故发生地的基层人民法院起诉。",
+        "input": "发生交通事故应该去哪个法院起诉?"
+    },
+    {
+        "output": "请您提供更具体的情况，无法回答。同时，强烈建议您立即向当地公安机关报案，以维护自己的合法权益。",
+        "input": "我遇到一个流氓无赖，起先加了好友，聊天以后有好感，就见面了，?"
+    }
+]
+```
+
 ## Generate Test Questions with GPT
 
 The GPT model uses the seed data to generate a broad range of test questions, effectively expanding the diversity of the test dataset. The questions generated during this stage assess the models' comprehension, contextual understanding, and response generation capabilities.
@@ -77,6 +100,30 @@ Easy-LLM-Evaluator
                     └─ example_questions.json
                     └─ questions.jsonl
 ```
+### Randomly Picked Seed Questions
+```json
+[
+    {
+        "output": "是的，无期之前的年数算作有期刑的一部分。",
+        "input": "你好，判无期之前住了4年，转有期之后，无期之前的年数在有期之内吗?"
+    },
+    {
+        "output": "请您提供更具体的情况，无法回答。同时，强烈建议您立即向当地公安机关报案，以维护自己的合法权益。",
+        "input": "我遇到一个流氓无赖，起先加了好友，聊天以后有好感，就见面了，?"
+    }
+]
+```
+
+### GPT-Generated Qusestions with Seed Question
+
+```json
+{"question_id": 1, "text": "产证是我和母亲的名字，4年前母亲过世，今年初外婆也过世，都没留遗嘱，我舅舅阿姨能分我的房产吗？?", "category": "法律问答"}
+{"question_id": 2, "text": "诉中财产保全保金额4O万，需要多少押金?", "category": "法律问答"}
+{"question_id": 42, "text": "如果一名工人在工作场所受伤，是否可以获得赔偿？", "category": "法律问答_GPT"}
+{"question_id": 43, "text": "如果一个人无意中捡到了一万元现金，这个人需要承担什么样的法律责任？", "category": "法律问答_GPT"}
+```
+
+
 ## Answer Generation by Base and Fine-tuned Models
 
 The base and fine-tuned models process the test questions to generate responses. These responses are then used to compare and evaluate the performance of the models, providing a direct measure of the effectiveness of the fine-tuning process.
@@ -107,7 +154,10 @@ Easy-LLM-Evaluator
 The evaluation and scoring data is transformed into a format suitable for visualization on a frontend web interface. This step helps to translate complex performance metrics into easy-to-understand visual data, providing a comprehensive overview of the models' performance.
 
 <p align="center">
-    <img src="./assets/webpage.jpg" alt="logo">
+    <img src="./assets/eval.jpg" alt="logo">
 </p>
 
+<p align="center">
+    <img src="./assets/eval_gpt.jpg" alt="logo">
+</p>
 
