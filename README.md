@@ -22,12 +22,12 @@ pip install -r requirements.txt
 Then, update the `eval/script/run_eval.sh` script with your specific model and project details. Replace the placeholder values with your own corresponding data:
 
 ```bash
-export BASE_MODEL_PATH="/path/to/base_model"    # For example, `export PROJECT_NAME="vicuna-7b-law"` .
-export TUNED_MODEL_PATH="/path/to/tuned_model"  # For example, `export CATEGORY="Legal Q&A"`
-export BASE_MODEL_NAME="base_model_name"        # For example, `export BASE_MODEL_PATH="models/vicuna-7b/"`
-export TUNED_MODEL_NAME="tuned_model_name"      # For example, `export TUNED_MODEL_PATH="models/vicuna-7b-CrimeKGAssitantClean/"` .
-export PROJECT_NAME="project_name"              # For example, `export PROJECT_NAME="vicuna-7b"` .
-export CATEGORY="category"                      # For example, `export PROJECT_NAME="vicuna-7b-CrimeKGAssitantClean"` .
+export PROJECT_NAME="project_name"              # For example, `export PROJECT_NAME="vicuna-7b-law"`
+export CATEGORY="category"                      # For example, `export CATEGORY="Legal Q&A"`
+export BASE_MODEL_PATH="/path/to/base_model"    # For example, `export BASE_MODEL_PATH="models/vicuna-7b/"`
+export TUNED_MODEL_PATH="/path/to/tuned_model"  # For example, `export TUNED_MODEL_PATH="models/vicuna-7b-CrimeKGAssitantClean/"`
+export BASE_MODEL_NAME="base_model_name"        # For example, `export PROJECT_NAME="vicuna-7b"`
+export TUNED_MODEL_NAME="tuned_model_name"      # For example, `export PROJECT_NAME="vicuna-7b-CrimeKGAssitantClean"`
 ```
 
 **Explanation of Attributes:**
