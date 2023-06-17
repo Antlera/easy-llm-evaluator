@@ -16,27 +16,30 @@ First, install the required dependencies:
 pip install -r requirements.txt
 ```
 
-Then, update the run_eval.sh script with your specific model and project details:
+Then, update the run_eval.sh script with your specific model and project details. Replace the placeholder values with your own corresponding data:
 
 ```bash
-export BASE_MODEL_PATH="/path/to/base_model"
-export TUNED_MODEL_PATH="/path/to/tuned_model"
-export BASE_MODEL_NAME="base_model_name"
-export TUNED_MODEL_NAME="tuned_model_name"
-export PROJECT_NAME="project_name"
-export CATEGORY="category"
+export BASE_MODEL_PATH="/path/to/base_model"    # For example, `export PROJECT_NAME="vicuna-7b-law"` .
+export TUNED_MODEL_PATH="/path/to/tuned_model"  # For example, `export CATEGORY="Legal Q&A"`
+export BASE_MODEL_NAME="base_model_name"        # For example, `export BASE_MODEL_PATH="models/vicuna-7b/"`
+export TUNED_MODEL_NAME="tuned_model_name"      # For example, `export TUNED_MODEL_PATH="models/vicuna-7b-CrimeKGAssitantClean/"` .
+export PROJECT_NAME="project_name"              # For example, `export PROJECT_NAME="vicuna-7b"` .
+export CATEGORY="category"                      # For example, `export PROJECT_NAME="vicuna-7b-CrimeKGAssitantClean"` .
 ```
 
-Replace the placeholder values with your own corresponding data:
+`PROJECT_NAME`: This attribute is used to specify the name of the project. `export PROJECT_NAME="vicuna-7b-law"` indicates that the project's name is "vicuna-7b-law".
 
-```bash
-BASE_MODEL_PATH: Set the path to the base model.  For example, `export BASE_MODEL_PATH="models/vicuna-7b/"` .
-TUNED_MODEL_PATH: Set the path to the tuned model.  For example, `export TUNED_MODEL_PATH="models/vicuna-7b-CrimeKGAssitantClean/"` .
-BASE_MODEL_NAME: Set the name of the base model.  For example, `export PROJECT_NAME="vicuna-7b"` .
-TUNED_MODEL_NAME: Set the name of the tuned model.  For example, `export PROJECT_NAME="vicuna-7b-CrimeKGAssitantClean"` .
-PROJECT_NAME: Set the name of the project.  For example, `export PROJECT_NAME="vicuna-7b-law"` .
-CATEGORY: Set the category. For example, `export CATEGORY="Legal Q&A"` .
-````
+`CATEGORY`: This attribute is used to specify the category of the project. `export CATEGORY="Legal Q&A"` indicates that the data of this evaluation project falls under the category "Legal Q&A".
+
+`BASE_MODEL_PATH`: This attribute is used to specify the location of the base model. `export BASE_MODEL_PATH="models/vicuna-7b/"` indicates that the base model is located at the path "models/vicuna-7b/".
+
+`TUNED_MODEL_PATH`: This attribute is used to specify the location of the tuned model. `export TUNED_MODEL_PATH="models/vicuna-7b-CrimeKGAssitantClean/"` indicates that the tuned model is located at the path "models/vicuna-7b-CrimeKGAssitantClean/".
+
+`BASE_MODEL_NAME`: This attribute is used to specify the name of the base model. `export PROJECT_NAME="vicuna-7b"` indicates that the base model's name is "vicuna-7b".
+
+`TUNED_MODEL_NAME`: This attribute is used to specify the name of the tuned model. `export PROJECT_NAME="vicuna-7b-CrimeKGAssitantClean"` indicates that the tuned model's name is "vicuna-7b-CrimeKGAssitantClean".
+
+
 
 Finally, run the one-click evaluation script:
 
