@@ -4,3 +4,4 @@ tqdm
 torch
 transformers
 openai
+sentencepiece
