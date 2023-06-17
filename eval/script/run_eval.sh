@@ -22,13 +22,13 @@ export CATEGORY="category"
 . eval/script/generate_question.sh
 
 # Get model answers
-# . eval/script/get_model_answer.sh
+. eval/script/get_model_answer.sh
 
 # Evaluate GPT review
-# . eval/script/eval_gpt_review.sh
+. eval/script/eval_gpt_review.sh
 
 # Generate webpage data from table
-# . eval/script/generate_webpage_data_from_table.sh
+. eval/script/generate_webpage_data_from_table.sh
 
 # Unset environment variables
 unset BASE_MODEL_PATH
