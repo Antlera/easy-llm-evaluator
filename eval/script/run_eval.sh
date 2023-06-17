@@ -1,11 +1,11 @@
 #!/bin/bash
 
+export PROJECT_NAME="project_name"
+export CATEGORY="category"
 export BASE_MODEL_PATH="/path/to/base_model"
 export TUNED_MODEL_PATH="/path/to/tuned_model"
 export BASE_MODEL_NAME="base_model_name"
 export TUNED_MODEL_NAME="tuned_model_name"
-export PROJECT_NAME="vicuna-7b-law"
-export CATEGORY="category"
 
 # Replace the placeholder values with your own corresponding data
 # BASE_MODEL_PATH: Set the path to the base model
