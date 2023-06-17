@@ -6,17 +6,20 @@
 
 ![License](https://img.shields.io/github/license/Antlera/easy-llm-evaluator)
 
-This project streamlines the process of evaluating and comparing the performance of base and fine-tuned machine learning models. It automatically generates test questions using GPT, obtains responses from the models, assesses these responses using a GPT model, and produces a score indicating the model's effectiveness. The evaluation results are then transformed into a format suitable for web-based visualization. This project enables rapid, consistent, and automated evaluation of language models, providing data-driven insights for model training and fine-tuning."
+Effortlessly evaluate your language learning models (LLMs)! This tool uses GPT to generate test questions, assesses responses from your base and fine-tuned models, and presents a clear effectiveness score. Visualization of results on a web-based interface enables instant insights for smarter training and fine-tuning decisions. Let Easy-LLM-Evaluator take your model performance tracking to the next level!
 
 ## Usage
+
+### Step 1: Install Dependencies
 
 First, install the required dependencies:
 
 ```bash
 pip install -r requirements.txt
 ```
+### Step 2: Update the Script
 
-Then, update the run_eval.sh script with your specific model and project details. Replace the placeholder values with your own corresponding data:
+Then, update the `eval/script/run_eval.sh` script with your specific model and project details. Replace the placeholder values with your own corresponding data:
 
 ```bash
 export BASE_MODEL_PATH="/path/to/base_model"    # For example, `export PROJECT_NAME="vicuna-7b-law"` .
@@ -26,6 +29,8 @@ export TUNED_MODEL_NAME="tuned_model_name"      # For example, `export TUNED_MOD
 export PROJECT_NAME="project_name"              # For example, `export PROJECT_NAME="vicuna-7b"` .
 export CATEGORY="category"                      # For example, `export PROJECT_NAME="vicuna-7b-CrimeKGAssitantClean"` .
 ```
+
+**Explanation of Attributes:**
 
 `PROJECT_NAME`: This attribute is used to specify the name of the project. `export PROJECT_NAME="vicuna-7b-law"` indicates that the project's name is "vicuna-7b-law".
 
@@ -39,7 +44,7 @@ export CATEGORY="category"                      # For example, `export PROJECT_N
 
 `TUNED_MODEL_NAME`: This attribute is used to specify the name of the tuned model. `export PROJECT_NAME="vicuna-7b-CrimeKGAssitantClean"` indicates that the tuned model's name is "vicuna-7b-CrimeKGAssitantClean".
 
-
+### Step 3: Run the Evaluation
 
 Finally, run the one-click evaluation script:
 
